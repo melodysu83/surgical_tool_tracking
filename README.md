@@ -31,18 +31,29 @@ Changes should be made in the launch file.
 
 Getting started with usb_cam:
 http://answers.ros.org/question/197651/how-to-install-a-driver-like-usb_cam/
+
 $ mkdir -p ~/catkin-ws/src
+
 $ cd ~/catkin-ws/src
+
 $ git clone https://github.com/bosch-ros-pkg/usb_cam.git
+
 $ cd ..
+
 $ catkin_make
+
 $ source ~/catkin-ws/devel/setup.bash
 after the above you can verify using ..
+
 $ roscd usb_cam
 roscore on a new terminal $ roscore
 and then in the terminal where you $ source 'd your usb_cam code run:
+
 $ rosrun usb_cam usb_cam_node
+
 or
+
 $ roslaunch usb_cam/launch/usb_cam-test.launch
 Make sure you have your camera connected, before running the above command!!! you view the captured image on rviz,
+
 $ rosrun rviz rviz
