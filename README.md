@@ -14,6 +14,7 @@ this will integrate everything together.
 Also, no need to call "roscore" on a separate terminal, "roslaunch" takes care of the problem.
 
 Few things to be aware of when playing with usb_cam:
+
 (1) >> rosrun usb_cam usb_cam_node does not shows the obtained image frame to a window
     >> roslaunch usb_cam/launch/usb_cam-test.launch does!
     So do what is best of the situation:)
