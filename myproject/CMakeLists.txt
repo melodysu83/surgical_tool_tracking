@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   usb_cam
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -48,11 +49,15 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  raven_automove.msg
+
+# raven_version_handler TODO: 
+#--------------------------------------------------------
+  ravenstate.msg   # if you are using indigo_raven
+  #raven_state.msg  # if you are using kinetic_raven
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -69,10 +74,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   sensor_msgs#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  sensor_msgs std_msgs geometry_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -104,10 +109,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES myproject
-#  CATKIN_DEPENDS cv_bridge image_transport roscpp rospy sensor_msgs std_msgs usb_cam
-#  DEPENDS system_lib
+    INCLUDE_DIRS include
+    LIBRARIES myproject
+    CATKIN_DEPENDS cv_bridge image_transport roscpp rospy sensor_msgs std_msgs usb_cam message_runtime
+    DEPENDS system_lib  
 )
 
 ###########
@@ -193,5 +198,6 @@ include_directories(
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(image_converter src/image_converter.cpp)
-target_link_libraries(image_converter ${catkin_LIBRARIES})
+add_executable(Surgical_Tool_Tracker src/MyTracker_Controller.cpp src/MyTracker_MotionPlanner.cpp src/main.cpp)
+target_link_libraries(Surgical_Tool_Tracker ${catkin_LIBRARIES})
+

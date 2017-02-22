@@ -8,11 +8,12 @@
     <param name="io_method" value="mmap"/>
   </node>
 
-  <node name="image_converter" pkg="myproject" type="image_converter" output="screen" >
+  <node name="Surgical_Tool_Tracker" pkg="myproject" type="Surgical_Tool_Tracker" output="screen" >
   </node>
 	
   <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
-    <remap from="image" to="/usb_cam/image_raw"/>
+    <remap from="image" to="/Surgical_Tool_Tracker/output_video"/>
     <param name="autosize" value="true" />
   </node>
+
 </launch>
