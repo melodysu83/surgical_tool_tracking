@@ -1,12 +1,11 @@
 # editted by: February 22, 2017
-This is the prototype of how the code may look like.
-(1) Three threads: the console thread (handle keyboard events, as fast as possible, but displays at 1Hz),
-                   the raven thread (1000Hz, as required from spec), 
-                   the image thread (handles getting image frames from usb_cam and push it back as a ROS topic).
+This is the prototype of how the code may look like.<br />
+(1) Three threads: the console thread (handle keyboard events, as fast as possible, but displays at 1Hz),<br />
+                   the raven thread (1000Hz, as required from spec),<br />
+                   the image thread (handles getting image frames from usb_cam and push it back as a ROS topic).<br />
+(2) Massive modification from last time. Now it is more topic specific and user friendly (kind of?).<br />
 
-(2) Massive modification from last time. Now it is more topic specific and user friendly (kind of?).
-
-(3) Video log: This is how it works right now.
+(3) Video log: This is how it works right now.<br />
 [![Alt text for your video](https://i.ytimg.com/vi/H7MriIoE_Go/2.jpg?time=1487799573332)](https://youtu.be/H7MriIoE_Go)
 
 
